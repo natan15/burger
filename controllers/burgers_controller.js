@@ -22,10 +22,10 @@ router.post("/burgers/create", function (req, res) {
     });
 });
 
-router.put("/burgers/:id", function (req, res) {
-    burger.update(req.params.id, function (result) {
+router.post("/burgers/devour", function (req, res) {
+    burger.update(req.body.burger_id, function (result) {
         console.log(result);
-        res.sendStatus(200);
+        res.redirect("/");
     });
 });
 
